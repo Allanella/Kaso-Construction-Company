@@ -9,9 +9,9 @@ import { SiteFooter } from "@/components/site-footer"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Acculate Constructions",
+  title: "Kaso Constructions",
   description: "Crafting Durable Elegance in Every Surface",
-    generator: 'v0.dev'
+    generator: 'Allan'
 }
 
 export default function RootLayout({

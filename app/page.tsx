@@ -1,156 +1,139 @@
-import Image from "next/image"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { CheckCircle, Hammer, Star, Users } from "lucide-react"
+import Image from "next/image";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { CheckCircle, Hammer, Star, Users } from "lucide-react";
 
 export default function HomePage() {
   return (
-    <div className="space-y-16 pb-16">
+    <div className="space-y-20 pb-20 bg-white text-gray-800">
       {/* Hero Section */}
-      <section className="relative h-[600px] w-full overflow-hidden">
+      <section className="relative w-full min-h-screen flex items-center justify-center bg-black">
         <Image
-          src="/images/hero-background.png"
-          alt="High-quality construction work"
-          layout="fill"
-          objectFit="cover"
-          className="brightness-75"
+          src="/images/finished1.jpg"
+          alt="Kaso Construction Company – We Build Your Dream Home"
+          fill
+          priority
+          className="object-cover brightness-75"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent flex flex-col items-center justify-center text-center px-4">
-          <h1 className="text-5xl md:text-7xl font-bold text-foreground drop-shadow-lg mb-4">
-            Crafting Durable Elegance in Every Surface
-          </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mb-8">
-            Acculate Constructions specializes in premium tiles, terrazzo, granite, and mosaic installations,
-            transforming spaces with precision and artistry.
-          </p>
-          <div className="flex gap-4">
-            <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
-              <Link href="/products">View Products</Link>
-            </Button>
-            <Button
-              asChild
-              size="lg"
-              variant="outline"
-              className="border-primary text-primary hover:bg-primary/10 bg-transparent"
-            >
-              <Link href="/contact">Get a Quote</Link>
-            </Button>
+        <div className="absolute inset-0 bg-black/60" />
+        <div className="relative z-10 w-full px-4 sm:px-6 py-12 flex flex-col items-center justify-center text-center text-white">
+          <div className="w-full max-w-5xl">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+              We Build Your Dream Home
+            </h1>
+            <p className="text-base sm:text-lg md:text-xl leading-relaxed mb-4">
+              Kaso Construction specializes in building homes, apartments, schools, hotels, hospitals, warehouses and more—serving Uganda and beyond.
+            </p>
+            <p className="text-base sm:text-lg md:text-xl leading-relaxed mb-6">
+              We also buy and sell land, offer land excavation and leveling services with professionalism and integrity.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Button asChild size="lg" className="bg-primary text-white hover:bg-primary/90">
+                <Link href="/services">Our Services</Link>
+              </Button>
+              <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+                <Link href="/contact">Contact Us</Link>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Short Intro / About Preview */}
-      <section className="container text-center max-w-4xl space-y-6">
-        <h2 className="text-4xl font-bold text-foreground">Welcome to Acculate Constructions</h2>
-        <p className="text-lg text-muted-foreground">
-          With years of expertise, Acculate Constructions is your trusted partner for high-quality surface solutions. We
-          are committed to delivering exceptional craftsmanship and durable results that stand the test of time. Our
-          dedication to excellence ensures every project reflects our passion for perfection.
+      {/* Intro Section */}
+      <section className="container text-center max-w-3xl px-4 sm:px-6 space-y-6">
+        <h2 className="text-2xl sm:text-4xl font-bold">Welcome to Kaso Construction</h2>
+        <p className="text-base sm:text-lg text-gray-600">
+          With a strong foundation in engineering and a passion for excellence, Kaso Construction is your trusted partner for building safe, functional, and inspiring spaces.
         </p>
         <Button asChild variant="link" className="text-primary hover:text-primary/80">
-          <Link href="/about">
-            Learn More About Us <span className="sr-only">about Acculate Constructions</span>
-          </Link>
+          <Link href="/about">Learn More About Us</Link>
         </Button>
       </section>
 
-      {/* Services Preview */}
-      <section className="container space-y-8">
-        <h2 className="text-4xl font-bold text-center text-foreground">Our Core Services</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <Card className="text-center p-6 bg-card border-border">
-            <CardHeader>
-              <Hammer className="h-12 w-12 text-primary mx-auto mb-4" />
-              <CardTitle className="text-2xl text-foreground">Tile Installation</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <CardDescription className="text-muted-foreground">
-                Expert installation of ceramic, porcelain, natural stone, and specialty tiles for floors and walls.
-              </CardDescription>
-            </CardContent>
-          </Card>
-          <Card className="text-center p-6 bg-card border-border">
-            <CardHeader>
-              <CheckCircle className="h-12 w-12 text-primary mx-auto mb-4" />
-              <CardTitle className="text-2xl text-foreground">Terrazzo & Granite</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <CardDescription className="text-muted-foreground">
-                Beautiful and durable terrazzo and granite solutions for countertops, flooring, and custom designs.
-              </CardDescription>
-            </CardContent>
-          </Card>
-          <Card className="text-center p-6 bg-card border-border">
-            <CardHeader>
-              <Users className="h-12 w-12 text-primary mx-auto mb-4" />
-              <CardTitle className="text-2xl text-foreground">Consultancy</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <CardDescription className="text-muted-foreground">
-                Professional guidance on material selection, design, and project planning to achieve your vision.
-              </CardDescription>
-            </CardContent>
-          </Card>
+      {/* Services Section */}
+      <section className="container px-4 sm:px-6 space-y-8 bg-gray-100 py-12 rounded-xl">
+        <h2 className="text-2xl sm:text-4xl font-bold text-center text-gray-800">Our Core Services</h2>
+        <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+          {[
+            {
+              icon: <Hammer className="h-12 w-12 text-blue-600 mx-auto mb-4" />,
+              title: "Residential & Commercial Construction",
+              description: "Complete building solutions for homes, apartments, schools, hospitals, and commercial properties.",
+            },
+            {
+              icon: <CheckCircle className="h-12 w-12 text-blue-600 mx-auto mb-4" />,
+              title: "Land Services",
+              description: "We buy and sell land, and offer expert excavation and leveling services.",
+            },
+            {
+              icon: <Users className="h-12 w-12 text-blue-600 mx-auto mb-4" />,
+              title: "Project Consultation",
+              description: "Expert advice and project planning to ensure successful construction outcomes.",
+            },
+          ].map((service, index) => (
+            <Card key={index} className="text-center p-6 shadow-md bg-white border border-gray-200">
+              <CardHeader>
+                {service.icon}
+                <CardTitle className="text-lg sm:text-xl text-gray-800">{service.title}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="text-gray-600">{service.description}</CardDescription>
+              </CardContent>
+            </Card>
+          ))}
         </div>
-        <div className="text-center pt-4">
-          <Button
-            asChild
-            size="lg"
-            variant="default"
-            className="bg-primary hover:bg-primary/90 text-primary-foreground"
-          >
-            <Link href="/products">Explore All Services</Link>
+        <div className="text-center">
+          <Button asChild size="lg" className="bg-primary text-white hover:bg-primary/90">
+            <Link href="/services">Explore All Services</Link>
           </Button>
         </div>
       </section>
 
-      {/* Testimonials Preview */}
-      <section className="container space-y-8">
-        <h2 className="text-4xl font-bold text-center text-foreground">What Our Clients Say</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <Card className="p-6 bg-card border-border">
-            <CardContent className="space-y-4">
-              <div className="flex items-center gap-2 text-primary">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-5 w-5 fill-current" />
-                ))}
-              </div>
-              <p className="text-lg italic text-muted-foreground">
-                &quot;Acculate Constructions transformed our kitchen with stunning granite countertops. The team was
-                professional, efficient, and the quality of work is simply outstanding!&quot;
-              </p>
-              <p className="font-semibold text-foreground">- Jane Doe, Homeowner</p>
-            </CardContent>
-          </Card>
-          <Card className="p-6 bg-card border-border">
-            <CardContent className="space-y-4">
-              <div className="flex items-center gap-2 text-primary">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-5 w-5 fill-current" />
-                ))}
-              </div>
-              <p className="text-lg italic text-muted-foreground">
-                &quot;Their expertise in terrazzo flooring for our commercial space was invaluable. The project was
-                completed on time and within budget, exceeding our expectations.&quot;
-              </p>
-              <p className="font-semibold text-foreground">- John Smith, Business Owner</p>
-            </CardContent>
-          </Card>
+      {/* Testimonials */}
+      <section className="container px-4 sm:px-6 space-y-8">
+        <h2 className="text-2xl sm:text-4xl font-bold text-center">Client Testimonials</h2>
+        <div className="grid gap-6 grid-cols-1 md:grid-cols-2">
+          {[
+            {
+              name: "Sarah A., Property Developer",
+              feedback: "Kaso Construction built our apartment complex on time and exceeded our expectations. Highly reliable and professional!",
+            },
+            {
+              name: "Michael K., Landowner",
+              feedback: "I sold my land through Kaso, and their process was smooth, transparent, and fair. I’d recommend them to anyone in the region.",
+            },
+          ].map((t, i) => (
+            <Card key={i} className="p-6 bg-card border border-border">
+              <CardContent className="space-y-4">
+                <div className="flex gap-1 text-primary">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="h-5 w-5 fill-current" />
+                  ))}
+                </div>
+                <p className="italic text-muted-foreground">"{t.feedback}"</p>
+                <p className="font-semibold">{t.name}</p>
+              </CardContent>
+            </Card>
+          ))}
         </div>
-        <div className="text-center pt-4">
+        <div className="text-center">
           <Button asChild variant="link" className="text-primary hover:text-primary/80">
-            <Link href="/testimonials">
-              Read More Testimonials <span className="sr-only">from our clients</span>
-            </Link>
+            <Link href="/testimonials">Read More Testimonials</Link>
           </Button>
         </div>
       </section>
 
-      {/* Video Showcase Section */}
-      <section className="container space-y-8">
-        <h2 className="text-4xl font-bold text-center text-foreground">See Our Work in Action</h2>
-        <div className="relative w-full h-[500px] bg-card rounded-lg overflow-hidden shadow-lg border border-border">
+      {/* Video Section */}
+      <section className="container px-4 sm:px-6 space-y-8">
+        <h2 className="text-2xl sm:text-4xl font-bold text-center">See Our Work in Action</h2>
+        <div className="relative w-full aspect-video rounded-lg overflow-hidden shadow-lg border border-border">
           <video
             className="w-full h-full object-cover"
             src="/videos/construction-showcase.mp4"
@@ -159,17 +142,15 @@ export default function HomePage() {
             muted
             autoPlay
             playsInline
-            aria-label="Acculate Constructions project showcase video"
           >
             Your browser does not support the video tag.
           </video>
-          <div className="absolute inset-0 bg-gradient-to-t from-background/50 to-transparent pointer-events-none"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent pointer-events-none" />
         </div>
-        <p className="text-center text-lg text-muted-foreground max-w-3xl mx-auto">
-          Witness the precision and quality of Acculate Constructions through our project showcase video. From initial
-          design to final touches, see how we bring durable elegance to every surface.
+        <p className="text-center text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto">
+          Experience the dedication and precision of Kaso Construction—watch how we bring ambitious projects to life.
         </p>
       </section>
     </div>
-  )
+  );
 }
