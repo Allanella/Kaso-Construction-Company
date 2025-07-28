@@ -1,24 +1,60 @@
+"use client";
+
 import React from "react";
+import {
+  Phone,
+  Mail,
+  Clock,
+  MapPin,
+  Globe,
+} from "lucide-react";
 
 export default function Contact() {
   return (
-    <main className="min-h-screen bg-blue-50 text-gray-800 p-8">
-      <section className="max-w-3xl mx-auto bg-white p-6 rounded-xl shadow-md">
-        <h1 className="text-3xl font-bold text-blue-900 mb-4 text-center">Contact Us</h1>
-        <p className="text-center text-gray-600 mb-6">
-          We'd love to hear about your project. Reach out today and let's build something incredible together.
+    <main className="min-h-screen bg-gradient-to-br from-blue-100 to-blue-50 p-6 flex items-center justify-center">
+      <section className="w-full max-w-2xl bg-white p-8 rounded-2xl shadow-xl border border-blue-100">
+        <h1 className="text-4xl font-bold text-blue-800 text-center mb-2">Contact Us</h1>
+        <p className="text-center text-gray-600 mb-8">
+          Let’s build something great together. Reach out to discuss your project!
         </p>
 
-        <div className="space-y-4 text-sm">
-          <p><strong>Phone (Uganda):</strong> +256763567391, +256764773432</p>
-          <p><strong>Phone (KSA):</strong> +966543361302</p>
-          <p>
-            <strong>Email:</strong>{" "}
-            <a href="mailto:allanbaliddawa@gmail.com" className="text-blue-600 underline">
-              allanbaliddawa@gmail.com
-            </a>
-          </p>
-          <p><strong>Office Hours:</strong> Monday - Friday, 8AM - 6PM</p>
+        <div className="space-y-6 text-gray-700 text-base">
+          <div className="flex items-start gap-4">
+            <Phone className="h-5 w-5 text-blue-600 mt-1" />
+            <div>
+              <p className="font-semibold">Phone (Uganda):</p>
+              <p>+256 763 567 391, +256 764 773 432</p>
+            </div>
+          </div>
+
+          <div className="flex items-start gap-4">
+            <Globe className="h-5 w-5 text-blue-600 mt-1" />
+            <div>
+              <p className="font-semibold">Phone (KSA):</p>
+              <p>+966 543 361 302</p>
+            </div>
+          </div>
+
+          <div className="flex items-start gap-4">
+            <Mail className="h-5 w-5 text-blue-600 mt-1" />
+            <div>
+              <p className="font-semibold">Email:</p>
+              <a
+                href="mailto:allanbaliddawa@gmail.com"
+                className="text-blue-700 hover:underline"
+              >
+                allanbaliddawa@gmail.com
+              </a>
+            </div>
+          </div>
+
+          <div className="flex items-start gap-4">
+            <Clock className="h-5 w-5 text-blue-600 mt-1" />
+            <div>
+              <p className="font-semibold">Office Hours:</p>
+              <p>Monday – Friday, 8:00 AM – 6:00 PM</p>
+            </div>
+          </div>
         </div>
       </section>
     </main>
