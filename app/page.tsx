@@ -16,7 +16,7 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="relative w-full min-h-screen flex items-center justify-center bg-black">
         <Image
-          src="/images/finished1.jpg"
+          src="/images/crane.png"
           alt="Kaso Construction Company – We Build Your Dream Home"
           fill
           priority

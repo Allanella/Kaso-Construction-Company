@@ -11,71 +11,61 @@ import {
 
 export function SiteFooter() {
   return (
-    <footer className="bg-primary text-white pt-12 pb-6 mt-20">
+    <footer className="bg-primary text-white mt-20 pt-16 pb-8">
       <div className="container mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12">
         {/* Branding */}
-        <div className="space-y-4">
-          <Link href="/" className="flex items-center space-x-2">
-            <Building className="h-7 w-7 text-white" />
-            <span className="text-xl font-bold">Kaso Constructions</span>
+        <div className="space-y-5">
+          <Link href="/" className="flex items-center gap-2 text-white hover:opacity-90 transition">
+            <Building className="h-7 w-7" />
+            <span className="text-2xl font-extrabold">Kaso Constructions</span>
           </Link>
-          <p className="text-sm leading-relaxed opacity-80">
-            Crafting Durable Elegance in Every Surface. Specializing in tiles, terrazzo,
-            granite, and mosaic installations.
+          <p className="text-sm text-white/80 leading-relaxed max-w-xs">
+            Crafting Durable Elegance in Every Surface. We specialize in tiles,
+            terrazzo, granite, and mosaic installations that stand the test of time.
           </p>
         </div>
 
         {/* Quick Links */}
-        <div className="space-y-4">
-          <h3 className="text-lg font-semibold">Quick Links</h3>
-          <ul className="space-y-2 text-sm">
-            <li>
-              <Link href="/about" className="hover:underline hover:text-white/90 transition">
-                About Us
-              </Link>
-            </li>
-            <li>
-              <Link href="/products" className="hover:underline hover:text-white/90 transition">
-                Products & Services
-              </Link>
-            </li>
-            <li>
-              <Link href="/projects" className="hover:underline hover:text-white/90 transition">
-                Projects Gallery
-              </Link>
-            </li>
-            <li>
-              <Link href="/testimonials" className="hover:underline hover:text-white/90 transition">
-                Testimonials
-              </Link>
-            </li>
-            <li>
-              <Link href="/contact" className="hover:underline hover:text-white/90 transition">
-                Contact Us
-              </Link>
-            </li>
+        <div className="space-y-5">
+          <h3 className="text-lg font-semibold tracking-wide">Quick Links</h3>
+          <ul className="space-y-2 text-sm text-white/90">
+            {[
+              { name: "About Us", href: "/about" },
+              { name: "Products & Services", href: "/products" },
+              { name: "Projects Gallery", href: "/projects" },
+              { name: "Testimonials", href: "/testimonials" },
+              { name: "Contact Us", href: "/contact" },
+            ].map((link) => (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  className="hover:text-white transition-colors duration-200"
+                >
+                  {link.name}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
 
         {/* Contact Info */}
-        <div className="space-y-4">
-          <h3 className="text-lg font-semibold">Contact Info</h3>
-          <ul className="space-y-3 text-sm opacity-90">
-            <li className="flex items-start gap-2">
-              <MapPin className="h-4 w-4 mt-1" />
-              <span>123 Construction Lane, City, Country</span>
+        <div className="space-y-5">
+          <h3 className="text-lg font-semibold tracking-wide">Contact Info</h3>
+          <ul className="space-y-3 text-sm text-white/90">
+            <li className="flex items-start gap-3">
+              <MapPin className="h-5 w-5 mt-0.5" />
+              <span>123 Construction Lane, Kampala, Uganda</span>
             </li>
-            <li className="flex items-start gap-2">
-              <Phone className="h-4 w-4 mt-1" />
-              <span>+1 (123) 456-7890</span>
+            <li className="flex items-start gap-3">
+              <Phone className="h-5 w-5 mt-0.5" />
+              <span>+256 700 000 000</span>
             </li>
-            <li className="flex items-start gap-2">
-              <Mail className="h-4 w-4 mt-1" />
+            <li className="flex items-start gap-3">
+              <Mail className="h-5 w-5 mt-0.5" />
               <span>info@kasoconstructions.com</span>
             </li>
           </ul>
 
-          {/* Social Icons */}
           <div className="flex gap-4 pt-4">
             <Link href="#" aria-label="Facebook" className="hover:text-white/80 transition">
               <Facebook className="h-5 w-5" />
@@ -90,8 +80,8 @@ export function SiteFooter() {
         </div>
       </div>
 
-      {/* Bottom Bar */}
-      <div className="mt-12 pt-6 border-t border-white/20 text-center text-sm opacity-80">
+      {/* Footer bottom */}
+      <div className="mt-12 border-t border-white/20 pt-6 text-center text-xs text-white/70">
         &copy; {new Date().getFullYear()} Kaso Constructions. All rights reserved.
       </div>
     </footer>

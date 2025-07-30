@@ -1,3 +1,5 @@
+"use client";
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Star } from "lucide-react";
 
@@ -54,12 +56,12 @@ const testimonials = [
 
 export default function TestimonialsPage() {
   return (
-    <div className="container py-20 space-y-20">
-      <section className="text-center space-y-6">
-        <h1 className="text-5xl font-extrabold text-primary tracking-tight">
+    <main className="min-h-screen bg-gray-50 py-16 px-6 sm:px-12 lg:px-20 text-gray-800">
+      <section className="text-center mb-16">
+        <h1 className="text-4xl sm:text-5xl font-extrabold text-blue-900 mb-4">
           What Our Clients Say
         </h1>
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
           Real stories from real clients who trusted Kaso Construction for their projects.
         </p>
       </section>
@@ -68,28 +70,28 @@ export default function TestimonialsPage() {
         {testimonials.map((testimonial) => (
           <Card
             key={testimonial.id}
-            className="bg-background border border-muted rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-300"
+            className="bg-white border border-gray-200 rounded-2xl shadow-md hover:shadow-lg transition duration-300"
           >
-            <CardHeader className="p-6 border-b border-border">
+            <CardHeader className="p-6 border-b border-gray-100">
               <div className="flex items-center gap-1 text-yellow-500 mb-3">
                 {[...Array(testimonial.rating)].map((_, i) => (
                   <Star key={i} className="h-5 w-5 fill-current" />
                 ))}
                 {[...Array(5 - testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="h-5 w-5 text-muted-foreground" />
+                  <Star key={i} className="h-5 w-5 text-gray-300" />
                 ))}
               </div>
-              <CardTitle className="text-2xl font-bold text-blue-900">
+              <CardTitle className="text-xl font-bold text-blue-800">
                 {testimonial.name}
               </CardTitle>
-              <p className="text-sm text-gray-600 italic">{testimonial.title}</p>
+              <p className="text-sm text-gray-500 italic">{testimonial.title}</p>
             </CardHeader>
-            <CardContent className="p-6 text-base text-muted-foreground leading-relaxed">
+            <CardContent className="p-6 text-base text-gray-700 leading-relaxed">
               <p className="italic">"{testimonial.quote}"</p>
             </CardContent>
           </Card>
         ))}
       </section>
-    </div>
+    </main>
   );
 }
